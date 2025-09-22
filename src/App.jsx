@@ -1,12 +1,33 @@
 import './App.css'
 
-function Square() {
-  return (
-    <>
-      <h1> This is my Tic Tac Toe project</h1>
-      <button className='square'> X</button>
-    </>
-  );
+function Square({valeur}) {
+  return <button className="square">{valeur}</button>;
 }
 
-export default Square
+
+export default function Board (){
+  return(
+
+    <>
+        <div className='board-row'>
+            <Square valeur={1}/>
+            <Square valeur={1}/>
+            <Square valeur={1}/>
+        </div>
+
+        <div className='board-row'>
+            <Square valeur={1}/>
+            <Square valeur={1}/>
+            <Square valeur={1}/>
+        </div>
+
+        <div className='board-row'>
+            <Square valeur={1}/>
+            <Square valeur={1}/>
+            <Square valeur={1}/>
+        </div>
+    </>
+  );
+
+}
+
