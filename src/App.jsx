@@ -1,6 +1,10 @@
 import './App.css'
 
 function Square({valeur}) {
+
+  function handleClick(){
+    alert(' You click on '+{valeur}+' case');
+  }
   return <button className="square">{valeur}</button>;
 }
 
