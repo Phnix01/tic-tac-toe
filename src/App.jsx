@@ -3,13 +3,15 @@ import { useState } from 'react';
 function Square() {
 const [valeur, setValeur] = useState(null);
   function handleClick(){
-    alert(' You click on '+valeur+' case');
+    setValeur('X');
   }
   return <button className="square" onClick={handleClick}>{valeur}</button>;
 }
 
 
 export default function Board (){
+
+  
   return(
 
     <>
