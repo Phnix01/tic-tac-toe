@@ -29,15 +29,15 @@ export default function Board (){
         </div>
 
         <div className='board-row'>
-            <Square valeur={squares[3]}  onClick={handleClick}/>
-            <Square valeur={squares[4]}  onClick={handleClick}/>
-            <Square valeur={squares[5]}  onClick={handleClick}/>
+            <Square valeur={squares[3]}  squareOnClick={()=>handleClick(3)}/>
+            <Square valeur={squares[4]}  squareOnClick={()=>handleClick(4)}/>
+            <Square valeur={squares[5]}  squareOnClick={()=>handleClick(5)}/>
         </div>
 
         <div className='board-row'>
-            <Square valeur={squares[6]}  onClick={handleClick}/>
-            <Square valeur={squares[7]}  onClick={handleClick}/>
-            <Square valeur={squares[8]}  onClick={handleClick}/>
+            <Square valeur={squares[6]}  squareOnClick={()=>handleClick(6)}/>
+            <Square valeur={squares[7]}  squareOnClick={()=>handleClick(7)}/>
+            <Square valeur={squares[8]}  squareOnClick={()=>handleClick(8)}/>
         </div>
     </>
   );
