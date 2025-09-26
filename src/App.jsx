@@ -18,6 +18,10 @@ export default function Board (){
 
     // la fonction handleClick crée une copie du tableau squres (nextSquares) 
     // grâce à la fonction javascript slice(). ensuite handleClik met à jour le tableau nextSquares pour ajouter un x à la case (index[0])
+    if(squares[i]){
+      return;
+    }
+    
     const nextSquares = squares.slice();
     if(xisNext){
       nextSquares[i] = "X";
