@@ -11,13 +11,24 @@ export default function Board (){
 
    const [squares, setSquares] = useState(Array(9).fill(null));
 
+   // on va considérer x comme l'utilisateur par defaut donc isNext va nous permettre de passer la main à l'autre joueur et de mettre O
+   const[xisNext, setXIsNext] = useState(true);
+
   function handleClick(i){
 
     // la fonction handleClick crée une copie du tableau squres (nextSquares) 
     // grâce à la fonction javascript slice(). ensuite handleClik met à jour le tableau nextSquares pour ajouter un x à la case (index[0])
     const nextSquares = squares.slice();
-    nextSquares[i] = "x";
+    if(xisNext){
+      nextSquares[i] = "X";
+    }
+    else
+    {
+      nextSquares[i] = "O";
+    }
+
     setSquares(nextSquares);
+    setXIsNext(!xisNext);
   }
   return(
 
