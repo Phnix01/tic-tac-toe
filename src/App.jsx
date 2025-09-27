@@ -7,18 +7,20 @@ function Square({valeur,squareOnClick}) {
 }
 
 
-export default function Board (){
+function Board (){
 
    const [squares, setSquares] = useState(Array(9).fill(null));
 
    // on va considérer x comme l'utilisateur par defaut donc isNext va nous permettre de passer la main à l'autre joueur et de mettre O
    const[xisNext, setXIsNext] = useState(true);
 
+   
+
   function handleClick(i){
 
     // la fonction handleClick crée une copie du tableau squres (nextSquares) 
     // grâce à la fonction javascript slice(). ensuite handleClik met à jour le tableau nextSquares pour ajouter un x à la case (index[0])
-    if(squares[i]){
+    if(squares[i] || calculWinner(squares)){
       return;
     }
     
@@ -55,9 +57,19 @@ export default function Board (){
   }
   return null;
   }
+
+  const winner = calculateWinner(squares);
+   let status;
+   if(winner){
+    status = winner + " a gagné";
+   }
+   else{
+    status 
+   }
   return(
 
     <>
+        <div className="status">{status}</div>
         <div className='board-row'>
             <Square valeur={squares[0]} squareOnClick={()=>handleClick(0)}/>
             <Square valeur={squares[1]} squareOnClick={()=>handleClick(1)}/>
@@ -80,3 +92,15 @@ export default function Board (){
 
 }
 
+export default function Game() {
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board />
+      </div>
+      <div className="game-info">
+        <ol>{/*TODO*/}</ol>
+      </div>
+    </div>
+  );
+}
